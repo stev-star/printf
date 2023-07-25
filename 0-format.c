@@ -4,30 +4,30 @@ void print_buffer(char buffer[], int *buffer_ind);
 
 /**
  * _printf - Printf function
- * @format: for the charcter %.
+ * @format: for the character %.
  * Return: Printed characters.
  */
 int _printf(const char *format, ...)
 {
-	int flag, width, precision, length, o; 
+	int flag, width, precision, length, o;
 	int buffer_ind = 0, printed = 0, print_chars = 0;
 	char buffer[BUFF_SIZE];
 	va_list n_args;
-	
+
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(n_args, format);
 
-	for (int o = 0; format && format[o] != '\0'; o++)
+	for (o = 0; format && format[o] != '\0'; o++)
 	{
 		if (format[o] != '%')
 		{
 			buffer[buffer_ind++] = format[o];
 			if (buffer_ind == BUFF_SIZE)
 				print_buffer(buffer, &buffer_ind);
-			
+
 			print_chars++;
 		}
 		else

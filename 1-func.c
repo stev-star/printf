@@ -3,7 +3,7 @@
 /************************* PRINT UNSIGNED NUMBER *************************/
 /**
  * print_unsigned - Prints an unsigned number
- * @n_args: List a of arguments
+ * @n_args: List of arguments
  * @buffer: Buffer array to handle print
  * @flag:  Calculates no. of active flag
  * @width: get width.
@@ -14,25 +14,25 @@
 int print_unsigned(va_list n_args, char buffer[],
 	int flag, int width, int precision, int length)
 {
-	int i = BUFF_SIZE - 2;
+	int p = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(n_args, unsigned long int);
 
 	num = convert_size_unsgnd(num, length);
 
 	if (num == 0)
-		buffer[i--] = '0';
+		buffer[p--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
-		buffer[i--] = (num % 10) + '0';
+		buffer[p--] = (num % 10) + '0';
 		num /= 10;
 	}
 
-	i++;
+	p++;
 
-	return (write_unsgnd(0, i, buffer, flag, width, precision, length));
+	return (write_unsgnd(0, p, buffer, flag, width, precision, length));
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/

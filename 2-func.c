@@ -15,7 +15,7 @@ int print_pointer(va_list n_args, char buffer[],
 	int flag, int width, int precision, int length)
 {
 	char extra_c = 0, padd = ' ';
-	int ind = BUFF_SIZE - 2, measure = 2, padd_start = 1; 
+	int ind = BUFF_SIZE - 2, measure = 2, padd_start = 1;
 	unsigned long num_addrs;
 	char map_to[] = "0123456789abcdef";
 	void *addrs = va_arg(n_args, void *);
@@ -55,7 +55,7 @@ int print_pointer(va_list n_args, char buffer[],
 /************************* PRINT NON PRINTABLE *************************/
 /**
  * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @n_args: Lista of arguments
+ * @n_args: List of arguments
  * @buffer: Buffer array to handle print
  * @flag:  Calculates no. of active flag
  * @width: get width.
@@ -108,7 +108,7 @@ int print_reverse(va_list n_args, char buffer[],
 	int flag, int width, int precision, int length)
 {
 	char *str;
-	int o, count = 0;
+	int t, count = 0;
 
 	UNUSED(buffer);
 	UNUSED(flag);
@@ -123,12 +123,12 @@ int print_reverse(va_list n_args, char buffer[],
 
 		str = ")Null(";
 	}
-	for (o = 0; str[o]; o++)
+	for (t = 0; str[t]; t++)
 		;
 
-	for (o = o - 1; o >= 0; o--)
+	for (t = t - 1; t >= 0; t--)
 	{
-		char z = str[o];
+		char z = str[t];
 
 		write(1, &z, 1);
 		count++;

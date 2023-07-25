@@ -6,7 +6,7 @@
  * print_char - Prints a char
  * @n_args: List of arguments
  * @buffer: Buffer array to handle print
- * @flag:  Calculates no. of active flag
+ * @flag: Calculates no. of active flag
  * @width: get width.
  * @precision: Precision specification
  * @length: Size specifier
@@ -24,7 +24,7 @@ int print_char(va_list n_args, char buffer[],
  * print_int - Print strings
  * @n_args: List of arguments
  * @buffer: Buffer array to handle print
- * @flag:  Calculates no. of active flag
+ * @flag: Calculates no. of active flag
  * @width: get width.
  * @precision: Precision specification
  * @length: Size specifier
@@ -33,7 +33,7 @@ int print_char(va_list n_args, char buffer[],
 int print_string(va_list n_args, char buffer[],
 	int flag, int width, int precision, int length)
 {
-	int measure = 0, i;
+	int measure = 0, h;
 	char *str = va_arg(n_args, char *);
 
 	UNUSED(buffer);
@@ -59,13 +59,13 @@ int print_string(va_list n_args, char buffer[],
 		if (flag & F_MINUS)
 		{
 			write(1, &str[0], measure);
-			for (i = width - measure; i > 0; i--)
+			for (h = width - measure; h > 0; h--)
 				write(1, " ", 1);
 			return (width);
 		}
 		else
 		{
-			for (i = width - measure; i > 0; i--)
+			for (h = width - measure; h > 0; h--)
 				write(1, " ", 1);
 			write(1, &str[0], measure);
 			return (width);
@@ -76,10 +76,10 @@ int print_string(va_list n_args, char buffer[],
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
- * print_int - Print percent sign
+ * print_percent - Print percent sign
  * @n_args: List of arguments
  * @buffer: Buffer array to handle print
- * @flag:  Calculates no. of active flag
+ * @flag: Calculates no. of active flag
  * @width: get width.
  * @precision: Precision specification
  * @length: Size specifier
@@ -102,7 +102,7 @@ int print_percent(va_list n_args, char buffer[],
  * print_int - Print int
  * @n_args: List of arguments
  * @buffer: Buffer array to handle print
- * @flag:  Calculates no. of active flag
+ * @flag: Calculates no. of active flag
  * @width: get width.
  * @precision: Precision specification
  * @length: Size specifier
@@ -143,10 +143,10 @@ int print_int(va_list n_args, char buffer[],
 
 /************************* PRINT BINARY *************************/
 /**
- * print_int - Print unsigned int number
+ * print_binary - Print unsigned int number
  * @n_args: List of arguments
  * @buffer: Buffer array to handle print
- * @flag:  Calculates no. of active flag
+ * @flag: Calculates no. of active flag
  * @width: get width.
  * @precision: Precision specification
  * @length: Size specifier

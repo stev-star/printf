@@ -5,7 +5,7 @@
  * handle_write_char - Prints a string
  * @c: char types.
  * @buffer: Buffer array to handle print
- * @flag:  Calculates active flags.
+ * @flag: Calculates active flags.
  * @width: get width.
  * @precision: precision specifier
  * @length: Size specifier
@@ -50,7 +50,7 @@ int handle_write_char(char c, char buffer[],
  * @is_negative: Lista of arguments
  * @index: char types.
  * @buffer: Buffer array to handle print
- * @flag:  Calculates active flags
+ * @flag: Calculates active flags
  * @width: get width.
  * @precision: precision specifier
  * @length: Size specifier

@@ -33,4 +33,4 @@ int get_width(const char *format, int *y, va_list n_args)
 	*y = cur_y - 1;
 
 	return (width);
-}	
+}
