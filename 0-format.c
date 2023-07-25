@@ -9,16 +9,16 @@ void print_buffer(char buffer[], int *buffer_ind);
  */
 int _printf(const char *format, ...)
 {
-    int flag, width, precision, length; 
+	int flag, width, precision, length; 
 	int buffer_ind = 0, printed = 0, print_chars = 0;
-    char buffer[BUFF_SIZE];
-	va_list args;
+	char buffer[BUFF_SIZE];
+	va_list n_args;
 	
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(args, format);
+	va_start(n_args, format);
 
 	for (int i = 0; format && format[i] != '\0'; i++)
 	{
@@ -34,11 +34,11 @@ int _printf(const char *format, ...)
 		{
 			print_buffer(buffer, &buffer_ind);
 			flag = get_flags(format, &i);
-			width = get_width(format, &i, args);
-			precision = get_precision(format, &i, args);
+			width = get_width(format, &i, n_args);
+			precision = get_precision(format, &i, n_args);
 			length = get_size(format, &i);
 			++i;
-			printed = handle_print(format, &i, args, buffer,
+			printed = handle_print(format, &i, n_args, buffer,
 				flag, width, precision, legth);
 			if (printed == -1)
 				return (-1);

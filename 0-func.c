@@ -1,6 +1,6 @@
 #include "main.h"
 
-/************************* PRINT CHAR *************************/
+/************************* PRINT CHARACTER *************************/
 
 /**
  * print_char - Prints a char
@@ -19,7 +19,7 @@ int print_char(va_list n_args, char buffer[],
 
 	return (handle_write_char(ch, buffer, flag, width, precision, length));
 }
-/************************* PRINT A STRING *************************/
+/************************* PRINT STRING *************************/
 /**
  * print_int - Print strings
  * @n_args: List of arguments
