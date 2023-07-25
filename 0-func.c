@@ -155,7 +155,7 @@ int print_int(va_list n_args, char buffer[],
 int print_binary(va_list n_args, char buffer[],
 	int flag, int width, int precision, int length)
 {
-	unsigned int j, k, i, sum;
+	unsigned int x, y, i, sum;
 	unsigned int a[32];
 	int count;
 
@@ -165,13 +165,13 @@ int print_binary(va_list n_args, char buffer[],
 	UNUSED(precision);
 	UNUSED(length);
 
-	j = va_arg(n_args, unsigned int);
-	k = 2147483648; /* (2 ^ 31) */
-	a[0] = j / k;
+	x = va_arg(n_args, unsigned int);
+	y = 2147483648; /* (2 ^ 31) */
+	a[0] = x / y;
 	for (i = 1; i < 32; i++)
 	{
-		k /= 2;
-		a[i] = (j / k) % 2;
+		y /= 2;
+		a[i] = (x / y) % 2;
 	}
 	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
